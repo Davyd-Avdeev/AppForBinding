@@ -24,7 +24,12 @@
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        
+        <Button Grid.Column="0" 
+                Grid.Row="1"
+                Height="30"
+                VerticalAlignment="Top"
+                Content="Exit"
+                Click="Button_Click"/>
         <StackPanel Grid.Column="1" 
                     Grid.Row="1"
                     Background="Green">
