@@ -23,6 +23,12 @@ namespace AppForBinding.View
         public BindingPage()
         {
             InitializeComponent();
+
+            ContentControl cc = new ContentControl();
+            cc.Style = (Style)this.TryFindResource("bindingObjectStyle");
+            stPanel.Children.Add(cc);
+
+            
         }
     }
 }

@@ -11,9 +11,25 @@
     <Page.DataContext>
         <vm:MainViewModel/>
     </Page.DataContext>
+
     <Grid Background="Aquamarine" Height="570" Width="640">
-        <TextBlock Text="{Binding Clicks}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28"/>
-        <Button Width="160" Height="40" Command="{Binding ClickOnButton}" Content="Click on ME!!" FontSize="24" Margin="0,130,0,0"/>
+        <!--<TextBlock Text="{Binding Clicks}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28"/>
+        <Button Width="160" Height="40" Command="{Binding ClickOnButton}" Content="Click on ME!!" FontSize="24" Margin="0,130,0,0"/>-->
+        <!--<StackPanel Width="600" Height="40" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10" Orientation="Horizontal">
+            <CheckBox Width="24" Height="24" VerticalAlignment="Top"  Style="{StaticResource CheckBoxLarge}" Margin="5,0,5,0"/>
+            <ComboBox Width="120" Height="24" VerticalAlignment="Top" Margin="5,0,5,0"/>
+            <TextBox Width="120" Height="24" VerticalAlignment="Top" Margin="5,0,5,0"/>
+            <TextBox Width="120" Height="24" VerticalAlignment="Top" Margin="5,0,5,0"/>
+            <ComboBox Width="120" Height="24" VerticalAlignment="Top" Margin="5,0,5,0"/>
+        </StackPanel>-->
+        <StackPanel x:Name="stPanel">
+            <ContentControl Style="{StaticResource bindingObjectStyle}"/>
+            <ContentControl Style="{StaticResource bindingObjectStyle}"/>  
+            
+        </StackPanel>
+        
+        
+
     </Grid>
 
 </Page>
