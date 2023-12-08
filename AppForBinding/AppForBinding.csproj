@@ -8,7 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Model\" />
+    <None Remove="Images\Cross.png" />
+    <None Remove="Images\Line.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\Cross.png" />
+    <Resource Include="Images\Line.png" />
   </ItemGroup>
 
 </Project>

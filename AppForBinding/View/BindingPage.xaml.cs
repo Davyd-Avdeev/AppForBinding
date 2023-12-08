@@ -37,17 +37,10 @@ namespace AppForBinding.View
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            int count = 0;
-            for (int i = objectsList.Count - 1; i >= 0; i--)
-            {
-                if (objectsList[i].IsChecked() == true) 
-                {
-                    count++;
-                } 
-            }
+            BindingObject bindingField = new BindingObject();
+            objectsList.Add(bindingField);
 
-            MessageBox.Show(count.ToString());
-            count = 0;
+            generalStackPanel.Children.Add(bindingField.stackPanel);
         }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)

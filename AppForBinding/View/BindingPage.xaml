@@ -8,17 +8,37 @@
       mc:Ignorable="d" 
       d:DesignHeight="570" d:DesignWidth="640"
       Title="BindingPage">
-    <Page.DataContext>
-        <vm:MainViewModel/>
-    </Page.DataContext>
-    <Grid Background="Aquamarine" Height="570" Width="640">
+    <Grid Height="570" Width="640">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="6*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <ComboBox Width="180" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="30"></ComboBox>
+        </Grid>
+        <Border Grid.ColumnSpan="2"
+                Grid.RowSpan="2" 
+                CornerRadius="0,0,32,0"
+                Background="#B1D9F2">
+            
+        </Border>
+        <Border Grid.Row="1" 
+                Background="#DCDDCE" 
+                BorderBrush="Black" 
+                BorderThickness="3"
+                CornerRadius="15"
+                Height="300" 
+                VerticalAlignment="Top">          
+        <ScrollViewer x:Name="theScrollViewer" VerticalScrollBarVisibility="Auto">            
+            <StackPanel x:Name="generalStackPanel"
+                        Orientation="Vertical"> 
+            </StackPanel>
+        </ScrollViewer>
+        </Border>
+        <Button Width="160" Height="40" Margin="0,0,10,130" Click="Button_Click" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="Добавить" FontSize="20"/>
+        <Button Width="160" Height="40" Margin="0,0,190,130" Click="Button_Click_1" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" Content="Удалить" FontSize="20"/>
         <!--<TextBlock Text="{Binding Clicks}" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="28"/>
         <Button Width="160" Height="40" Command="{Binding ClickOnButton}" Content="Click on ME!!" FontSize="24" Margin="0,130,0,0"/>-->
-        <StackPanel x:Name="generalStackPanel"
-                    Orientation="Vertical">            
-        </StackPanel>
-        <Button Width="160" Height="40" Margin="0,80,0,0" Click="Button_Click"/>
-        <Button Width="160" Height="40" Margin="0,180,0,0" Click="Button_Click_1"/>
     </Grid>
 
 </Page>

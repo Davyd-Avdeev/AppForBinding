@@ -20,20 +20,21 @@ namespace AppForBinding.View
         public BindingObject()
         {
             chkSelect = new CheckBox();
+            chkSelect.Margin = new Thickness(5, 0, 5, 0);
             cmbAction = new ComboBox();
-            cmbAction.Width = 100;
+            cmbAction.Width = 140;
             cmbAction.Height = 25;
             cmbAction.Margin = new Thickness(5, 0, 5, 0);
             txbAddinationInfo = new TextBox();
-            txbAddinationInfo.Width = 100;
+            txbAddinationInfo.Width = 140;
             txbAddinationInfo.Height = 25;
             txbAddinationInfo.Margin = new Thickness(5, 0, 5, 0);
             button = new TextBox();
-            button.Width = 100;
+            button.Width = 140;
             button.Height = 25;
             button.Margin = new Thickness(5, 0, 5, 0);
             cbxState = new ComboBox();
-            cbxState.Width = 100;
+            cbxState.Width = 140;
             cbxState.Height = 25;
             cbxState.Margin = new Thickness(5, 0, 5, 0);
             stackPanel = new StackPanel();

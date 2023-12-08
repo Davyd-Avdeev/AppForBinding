@@ -6,15 +6,14 @@
         xmlns:local="clr-namespace:AppForBinding"
         xmlns:vm="clr-namespace:AppForBinding.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" 
-        Height="600" 
-        Width="800"
+        Title="MainWindow" Height="600" Width="800"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        AllowsTransparency="True">
+        AllowsTransparency="True"
+        Background="Transparent">
     <Window.DataContext>
         <vm:MainViewModel/>
-    </Window.DataContext> 
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="160"></ColumnDefinition>
@@ -24,15 +23,73 @@
             <RowDefinition Height="30"></RowDefinition>
             <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-        <Button Grid.Column="0" 
+        <Border Grid.ColumnSpan="2"
+                Grid.RowSpan="2"
+                Height="600"
+                Width="800"
+                CornerRadius="32"
+                Background="#418393">
+        </Border>
+        <Button x:Name="btnExit"
+                Grid.Column="1"
+                Background="#418393"
+                Margin="0,5,7,0"
+                Style="{StaticResource CircleButton}"
+                Command="{Binding ButtonExitClick}">
+            <Image Source="/Images/Cross.png" Width="8"/>
+        </Button>
+        <Button x:Name="btnRollUp"
+                Grid.Column="1"
+                Background="#418393"
+                Margin="0,5,35,0"
+                Style="{StaticResource CircleButton}">
+            <Image Source="/Images/Line.png" Width="8"/>
+        </Button>
+
+
+        <StackPanel Grid.Column="0" 
+                    Grid.RowSpan="2">
+            <StackPanel Height="70">
+            </StackPanel>
+            <StackPanel>
+                <Menu Height="120" 
+                      VerticalAlignment="Top">
+                    <Menu.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Orientation="Vertical"/>
+                        </ItemsPanelTemplate>
+                    </Menu.ItemsPanel>
+
+                    <MenuItem Header="Кнопки" 
+                              Height="40"
+                              Background="#418393"
+                              Style="{StaticResource Services_MenuItem_With_Dropdown}">
+                        <!--<MenuItem.Icon>
+                            <Image Source="/Images/Line.png"
+                                   Stretch="Uniform"/>
+                        </MenuItem.Icon>-->
+                    </MenuItem>
+                    <MenuItem Header="В процессе" 
+                              Height="40"
+                              Background="#418393"
+                              Style="{StaticResource Main_MenuItem}">
+                    </MenuItem>
+                    <MenuItem Header="Drag?" 
+                              Height="40"
+                              Background="#418393"
+                              Style="{StaticResource Main_MenuItem}">
+                    </MenuItem>
+                </Menu>
+            </StackPanel>
+        </StackPanel>
+
+        <Border Background="#B1D9F2" 
+                Grid.Column="1" 
                 Grid.Row="1"
-                Height="30"
-                VerticalAlignment="Top"
-                Content="Exit"
-                Click="Button_Click"/>
+                CornerRadius="0,0,32,0"/>
         <StackPanel Grid.Column="1" 
-                    Grid.Row="1"
-                    Background="Green">
+                    Grid.Row="1">
+            
             <Frame x:Name="MainFrame"                  
                    NavigationUIVisibility="Hidden"/>
         </StackPanel>
